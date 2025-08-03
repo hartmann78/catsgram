@@ -1,4 +1,4 @@
-package com.example.catsgram.exceptions;
+package com.example.catsgram.exception;
 
 public class InvalidEmailException extends RuntimeException {
     public InvalidEmailException(String message) {

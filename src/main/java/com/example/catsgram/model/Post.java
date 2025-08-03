@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.Instant;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -18,16 +17,5 @@ public class Post {
         this.author = author;
         this.description = description;
         this.photoUrl = photoUrl;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Post post)) return false;
-        return Objects.equals(author, post.author) && Objects.equals(creationDate, post.creationDate) && Objects.equals(description, post.description) && Objects.equals(photoUrl, post.photoUrl);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(author, creationDate, description, photoUrl);
     }
 }

@@ -1,25 +1,25 @@
-package com.example.catsgram.controllers;
+package com.example.catsgram.controller;
 
 import com.example.catsgram.model.Post;
+import com.example.catsgram.service.PostService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/posts")
+@RequiredArgsConstructor
 public class PostController {
-    private Map<Integer, Post> posts = new HashMap<>();
+    private final PostService postService;
 
     @GetMapping
     public Collection<Post> findAll() {
-        return posts.values();
+        return postService.findAll();
     }
 
     @PostMapping
     public Post create(@RequestBody Post post) {
-        posts.put(post.hashCode(), post);
-        return post;
+        return postService.create(post);
     }
 }
