@@ -1,4 +1,4 @@
-package com.example.catsgram.exception;
+package com.practice.catsgram.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {

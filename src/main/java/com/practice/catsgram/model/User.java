@@ -1,4 +1,4 @@
-package com.example.catsgram.model;
+package com.practice.catsgram.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

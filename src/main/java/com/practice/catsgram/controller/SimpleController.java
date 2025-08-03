@@ -1,4 +1,4 @@
-package com.example.catsgram.controller;
+package com.practice.catsgram.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

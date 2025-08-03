@@ -1,26 +1,22 @@
-package com.example.catsgram.controller;
+package com.practice.catsgram.controller;
 
-import com.example.catsgram.model.User;
-import com.example.catsgram.service.UserService;
+import com.practice.catsgram.model.User;
+import com.practice.catsgram.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
+import java.util.*;
 
 @RestController
-@RequestMapping("/users")
 @RequiredArgsConstructor
+@RequestMapping("/users")
 public class UserController {
+
     private final UserService userService;
 
     @GetMapping
     public Collection<User> findAll() {
         return userService.findAll();
-    }
-
-    @GetMapping("/{email}")
-    public User findUserByEmail(@PathVariable String email) {
-        return userService.findUserByEmail(email);
     }
 
     @PostMapping
@@ -31,5 +27,10 @@ public class UserController {
     @PutMapping
     public User update(@RequestBody User user) {
         return userService.update(user);
+    }
+
+    @GetMapping("/user/{userMail}")
+    public User getUser(@PathVariable("userMail") String userMail) {
+        return userService.findUserByEmail(userMail);
     }
 }
